@@ -52,12 +52,12 @@ struct Keyboard: View {
                         .font(.system(size: 20, weight: .heavy))
                         .frame(width: 40, height: 50)
                         .foregroundColor(.primary)
-                        .background(Color.unused)
+                        .background(Color("unused"))
                 }
                 .font(.system(size: 20))
                 .frame(width: 60, height: 50)
                 .foregroundColor(.primary)
-                .background(Color.unused)
+                .background(Color("unused"))
                 .disabled(dm.currentWord.count == 0 || !dm.inPlay)
                 .opacity((dm.currentWord.count == 0 || !dm.inPlay) ? 0.6 : 1)
             }

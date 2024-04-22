@@ -16,13 +16,13 @@ struct GuessView: View {
                     Text(guess.guessLetters[index])
                         .foregroundColor(.primary)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                        .background(Color("systemBackground"))
+                        .background(Color("systemBackground"), ignoresSafeAreaEdges: [])
 
                 } back: {
                     Text(guess.guessLetters[index])
                         .foregroundColor(.white)
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-                        .background(guess.bgColors[index])
+                        .background(guess.bgColors[index], ignoresSafeAreaEdges: [])
                 }
                 .font(.system(size: 35, weight: .heavy))
                 .border(Color(.secondaryLabel))

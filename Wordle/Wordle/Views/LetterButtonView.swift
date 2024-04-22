@@ -21,6 +21,10 @@ struct LetterButtonView: View {
                 .foregroundColor(.primary)
         }
         .buttonStyle(.plain)
+        .onAppear {
+            print(letter)
+            print(dm.keyColors[letter])
+        }
     }
 }
 

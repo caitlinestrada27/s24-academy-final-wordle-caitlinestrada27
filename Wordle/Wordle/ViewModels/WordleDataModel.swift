@@ -11,14 +11,14 @@ class WordleDataModel: ObservableObject {
     @Published var guesses: [Guess] = []
     @Published var incorrectAttempts = [Int](repeating: 0, count: 6)
     
-    var keyColors = [String : Color]()
-    var matchedLetters = [String]()
-    var misplacedLetters = [String]()
-    var selectedWord = ""
-    var currentWord = ""
-    var tryIndex = 0
-    var inPlay = false
-    var gameOver = false
+    @Published var keyColors = [String : Color]()
+    @Published var matchedLetters = [String]()
+    @Published var misplacedLetters = [String]()
+    @Published var selectedWord = ""
+    @Published var currentWord = ""
+    @Published var tryIndex = 0
+    @Published var inPlay = false
+    @Published var gameOver = false
     
     var gameStarted: Bool {
         !currentWord.isEmpty || tryIndex > 0
@@ -36,11 +36,11 @@ class WordleDataModel: ObservableObject {
     func newGame() {
         populateDefaults()
         selectedWord = Global.commonWords.randomElement()!
+        print(selectedWord)
         currentWord = ""
         inPlay = true
         tryIndex = 0
         gameOver = false
-        print(selectedWord)
     }
     
     func populateDefaults() {
@@ -113,10 +113,10 @@ class WordleDataModel: ObservableObject {
             let correctLetter = correctLetters[index]
             let guessLetter = guesses[tryIndex].guessLetters[index]
             if guessLetter == correctLetter {
-                guesses[tryIndex].bgColors[index] = .correct
+                guesses[tryIndex].bgColors[index] = Color("correct")
                 if !matchedLetters.contains(guessLetter) {
                     matchedLetters.append(guessLetter)
-                    keyColors[guessLetter] = .correct
+                    keyColors[guessLetter] = Color("correct")
                 }
                 if misplacedLetters.contains(guessLetter) {
                     if let index = misplacedLetters.firstIndex(where: {$0 == guessLetter}) {
@@ -130,18 +130,18 @@ class WordleDataModel: ObservableObject {
         for index in 0...4 {
             let guessLetter = guesses[tryIndex].guessLetters[index]
             if correctLetters.contains(guessLetter) && guesses[tryIndex].bgColors[index] != .correct && frequency[guessLetter]! > 0 {
-                guesses[tryIndex].bgColors[index] = .misplaced
-                if !misplacedLetters.contains(guessLetter) && matchedLetters.contains(guessLetter){
-                    matchedLetters.append(guessLetter)
-                    keyColors[guessLetter] = .misplaced
+                guesses[tryIndex].bgColors[index] = Color("misplaced")
+                if !matchedLetters.contains(guessLetter) {
+                    misplacedLetters.append(guessLetter)
+                    keyColors[guessLetter] = Color("misplaced")
                 }
                 frequency[guessLetter]! -= 1
             }
         }
         for index in 0...4 {
             let guessLetter = guesses[tryIndex].guessLetters[index]
-            if keyColors[guessLetter] != .correct && keyColors[guessLetter] != .misplaced {
-                    keyColors[guessLetter] = .wrong
+            if keyColors[guessLetter] != Color("correct") && keyColors[guessLetter] != Color("misplaced") {
+                    keyColors[guessLetter] = Color("wrong")
             }
         }
 
