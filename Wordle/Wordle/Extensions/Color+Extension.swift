@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/*
 extension Color {
     static var wrong: Color {
         Color(UIColor(named: "wrong")!)
@@ -24,3 +25,4 @@ extension Color {
         Color(UIColor(named: "systemBackground")!)
     }
 }
+*/

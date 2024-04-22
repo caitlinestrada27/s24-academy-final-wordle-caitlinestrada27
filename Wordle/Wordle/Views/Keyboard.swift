@@ -33,7 +33,7 @@ struct Keyboard: View {
                 .font(.system(size: 20))
                 .frame(width: 60, height: 50)
                 .foregroundColor(.primary)
-                .background(Color.unused)
+                .background(Color("unused"))
                 ForEach(thirdRowArray, id: \.self) { letter in
                     LetterButtonView(letter: letter)
                 }
