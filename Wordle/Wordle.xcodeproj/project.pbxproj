@@ -18,6 +18,7 @@
 		6C0EA8842BD5FD22008E69A0 /* WordleDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0EA8832BD5FD22008E69A0 /* WordleDataModel.swift */; };
 		6C0EA8862BD5FD78008E69A0 /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0EA8852BD5FD78008E69A0 /* LetterButtonView.swift */; };
 		6C0EA8882BD5FF4A008E69A0 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0EA8872BD5FF4A008E69A0 /* Keyboard.swift */; };
+		6C0EA88B2BD60CE1008E69A0 /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0EA88A2BD60CE1008E69A0 /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		6C0EA8832BD5FD22008E69A0 /* WordleDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleDataModel.swift; sourceTree = "<group>"; };
 		6C0EA8852BD5FD78008E69A0 /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		6C0EA8872BD5FF4A008E69A0 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		6C0EA88A2BD60CE1008E69A0 /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				6C0EA8732BD5EDFA008E69A0 /* Views */,
 				6C0EA8702BD5ED65008E69A0 /* Models */,
 				6C0EA8792BD5F354008E69A0 /* ViewModels */,
+				6C0EA8892BD60CC9008E69A0 /* Animations */,
 				6C0EA8762BD5EEFB008E69A0 /* Extensions */,
 				6C0EA86A2BD5E885008E69A0 /* Assets.xcassets */,
 				6C0EA86E2BD5E8C1008E69A0 /* Launch Screen.storyboard */,
@@ -118,6 +121,14 @@
 				6C0EA8832BD5FD22008E69A0 /* WordleDataModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6C0EA8892BD60CC9008E69A0 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				6C0EA88A2BD60CE1008E69A0 /* Shake.swift */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +207,7 @@
 				6C0EA8782BD5EF14008E69A0 /* Color+Extension.swift in Sources */,
 				6C0EA8882BD5FF4A008E69A0 /* Keyboard.swift in Sources */,
 				6C0EA85D2BD5E836008E69A0 /* GameView.swift in Sources */,
+				6C0EA88B2BD60CE1008E69A0 /* Shake.swift in Sources */,
 				6C0EA85B2BD5E836008E69A0 /* WordleApp.swift in Sources */,
 				6C0EA8722BD5ED70008E69A0 /* Guess.swift in Sources */,
 				6C0EA87D2BD5F429008E69A0 /* Global.swift in Sources */,
